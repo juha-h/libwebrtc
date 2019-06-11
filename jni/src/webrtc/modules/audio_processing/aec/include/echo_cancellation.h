@@ -14,7 +14,7 @@
 #include <stddef.h>
 
 #include "webrtc/typedefs.h"
-	
+
 // Errors
 #define AEC_UNSPECIFIED_ERROR 12000
 #define AEC_UNSUPPORTED_FUNCTION_ERROR 12001
@@ -242,5 +242,4 @@ struct AecCore* WebRtcAec_aec_core(void* handle);
 #ifdef __cplusplus
 }
 #endif
-
 #endif  // WEBRTC_MODULES_AUDIO_PROCESSING_AEC_INCLUDE_ECHO_CANCELLATION_H_
