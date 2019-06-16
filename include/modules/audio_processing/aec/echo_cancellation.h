@@ -241,6 +241,9 @@ int32_t WebRtcAec_get_error_code(void* aecInst);
 //
 struct AecCore* WebRtcAec_aec_core(void* handle);
 
+// Non-zero enables, zero disables.
+void WebRtcAec_enable_delay_agnostic(struct AecCore*, int enable);
+
 #ifdef __cplusplus
 }
 #endif
