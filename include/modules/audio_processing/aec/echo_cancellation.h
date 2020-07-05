@@ -243,6 +243,7 @@ struct AecCore* WebRtcAec_aec_core(void* handle);
 
 // Non-zero enables, zero disables.
 void WebRtcAec_enable_delay_agnostic(struct AecCore*, int enable);
+void WebRtcAec_enable_extended_filter(struct AecCore*, int enable);
 
 #ifdef __cplusplus
 }
