@@ -1,7 +1,7 @@
 
 LOCAL_PATH := $(call my-dir)
 
-common_CFLAGS := -fexceptions -DWEBRTC_POSIX=1 -I$(LOCAL_PATH)/src/
+common_CFLAGS := -fexceptions -DWEBRTC_POSIX=1 -DWEBRTC_ANDROID -I$(LOCAL_PATH)/src/
 common_LDFLAGS :=
 
 common_SRC_FILES := \
