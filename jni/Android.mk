@@ -44,6 +44,8 @@ ifneq ($(findstring arm,$(TARGET_ARCH_ABI)),)
 		common_LDFLAGS += -Wl,--fix-cortex-a8
 	else ifeq ($(TARGET_ARCH_ABI), arm64-v8a)
 		common_CFLAGS += -DWEBRTC_ARCH_ARM64
+	else ifeq ($(TARGET_ARCH_ABI), x86_64)
+		common_CFLAGS += -DWEBRTC_ARCH_X86_64
 	endif
 
 endif

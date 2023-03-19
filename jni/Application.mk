@@ -1,4 +1,4 @@
-APP_ABI := armeabi-v7a arm64-v8a
+APP_ABI := $(ANDROID_TARGET_ARCH)
 
 ifeq ($(findstring x86,$(TARGET_ARCH_ABI)),)
 	APP_STL := c++_static
