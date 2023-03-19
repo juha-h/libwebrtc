@@ -27,7 +27,6 @@ common_SRC_FILES := \
 	src/webrtc/common_audio/signal_processing/spl_sqrt.c                  \
 	src/webrtc/common_audio/signal_processing/vector_scaling_operations.c
 
-
 ifneq ($(findstring arm,$(TARGET_ARCH_ABI)),)
 	common_SRC_FILES += \
 	src/webrtc/modules/audio_processing/aecm/aecm_core_neon.cc            \
@@ -44,10 +43,15 @@ ifneq ($(findstring arm,$(TARGET_ARCH_ABI)),)
 		common_LDFLAGS += -Wl,--fix-cortex-a8
 	else ifeq ($(TARGET_ARCH_ABI), arm64-v8a)
 		common_CFLAGS += -DWEBRTC_ARCH_ARM64
-	else ifeq ($(TARGET_ARCH_ABI), x86_64)
-		common_CFLAGS += -DWEBRTC_ARCH_X86_64
 	endif
 
+else ifneq ($(findstring x86,$(TARGET_ARCH_ABI)),)
+	common_SRC_FILES += \
+	src/webrtc/modules/audio_processing/aecm/aecm_core_c.cc               \
+
+	ifeq ($(TARGET_ARCH_ABI), x86_64)
+		common_CFLAGS += -DWEBRTC_ARCH_ARM64
+	endif
 endif
 
 common_C_INCLUDES = $(LOCAL_PATH)/include
