@@ -45,12 +45,6 @@ libwebrtc_audio_coding = library(ac_project_name,
     install: true
 )
 
-webrtc_audio_coding_dep = declare_dependency(
-    link_with: libwebrtc_audio_coding,
-    include_directories: webrtc_inc,
-    version: ac_version
-)
-
 install_headers(['codecs/isac/bandwidth_info.h'],
     subdir: join_paths(include_subdir, 'modules', 'audio_coding', 'codecs', 'isac')
 )

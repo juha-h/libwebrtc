@@ -211,9 +211,3 @@ libwebrtc_audio_processing = library(apm_project_name,
     soversion: apm_minor_version,
     install: true
 )
-
-webrtc_audio_processing_dep = declare_dependency(
-    link_with: libwebrtc_audio_processing,
-    include_directories: webrtc_inc,
-    version: apm_version
-)

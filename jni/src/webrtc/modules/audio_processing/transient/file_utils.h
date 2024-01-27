@@ -12,6 +12,7 @@
 #define MODULES_AUDIO_PROCESSING_TRANSIENT_FILE_UTILS_H_
 
 #include <string.h>
+#include <cstdint>
 
 #include "rtc_base/system/file_wrapper.h"
 
